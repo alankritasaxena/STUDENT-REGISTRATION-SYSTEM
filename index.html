@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+  <header>
+    <h1>STUDENT REGISTRATION SYSTEM</h1>
+    <p>Register, edit, and delete student details easily.</p>
+  </header>
+
+  <main>
+    <section id="form-section">
+      <form id="studentForm" novalidate>
+        <div class="form-group">
+          <label for="studentName">Student Name:</label>
+          <input
+            type="text"
+            id="studentName"
+            name="studentName"
+            placeholder="Enter student name"
+            required
+            pattern="^[A-Za-z\s]+$"
+            title="Only letters and spaces allowed"
+          />
+        </div>
+        <div class="form-group">
+          <label for="studentID">Student ID:</label>
+          <input
+            type="text"
+            id="studentID"
+            name="studentID"
+            placeholder="Enter student ID"
+            required
+            pattern="^\d+$"
+            title="Only numbers allowed"
+          />
+        </div>
+        <div class="form-group">
+          <label for="emailID">Email ID:</label>
+          <input
+            type="email"
+            id="emailID"
+            name="emailID"
+            placeholder="Enter email address"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="contactNumber">Contact Number:</label>
+          <input
+            type="text"
+            id="contactNumber"
+            name="contactNumber"
+            placeholder="Enter contact number"
+            required
+            pattern="^\d{10,}$"
+            title="At least 10 digits required"
+          />
+        </div>
+        <div class="form-actions">
+          <button type="submit" id="submitBtn"> ADD STUDENT </button>
+          <button type="button" id="cancelEditBtn" class="hidden">Cancel Edit</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="display-section">
+      <h2> REGISTERED STUDENTS </h2>
+      <div id="table-wrapper">
+        <table id="studentsTable" aria-label="Registered students">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Student ID</th>
+              <th>Email ID</th>
+              <th>Contact Number</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <div id="github-link-container">
+  <a href="https://github.com/your-github-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+    View On GitHub
+  </a>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
