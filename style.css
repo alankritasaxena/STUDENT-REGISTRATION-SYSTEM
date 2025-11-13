@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background: linear-gradient(#fff5c3, #9452a5);
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-family: 'Times New Roman', Times, serif ;
+  font-size: 2rem;
+  margin-bottom: 0.2rem;
+  color: black;
+}
+
+header p {
+  font-weight: 600;
+  color: darkred;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  width: 100%;
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+}
+
+#form-section {
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #ea6a37;
+  outline: none;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-actions button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #7b5214;
+  transition: background-color 0.3s ease;
+}
+
+.form-actions button:hover {
+  background-color: #b47a2a;
+}
+
+.form-actions button.hidden {
+  display: none;
+}
+
+#display-section h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #cf440d;
+}
+
+#table-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #493e08;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+thead th {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-btn {
+  margin-right: 0.4rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn.delete {
+  background-color: #e74c3c;
+}
+
+.action-btn:hover {
+  opacity: 0.85;
+}
+#github-link-container {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(37, 117, 252, 0.9);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(37, 117, 252, 0.7);
+  z-index: 1000;
+}
+
+#github-link-container a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+#github-link-container a:hover,
+#github-link-container a:focus {
+  color: #000000;
+  outline: none;
+}
+
+/* For Responsive styling */
+@media (max-width: 640px) {
+  body {
+    padding: 0.5rem;
+  }
+  main {
+    padding: 1rem;
+  }
+  .form-group {
+    margin-bottom: 0.75rem;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions button {
+    width: 100%;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+    background-color: #b07313;
+  }
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    border-radius: 5px;
+    background: white;
+  }
+  tbody td {
+    border: none;
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+  }
+  tbody td::before {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  tbody td:nth-of-type(1)::before { content: "Student Name"; }
+  tbody td:nth-of-type(2)::before { content: "Student ID"; }
+  tbody td:nth-of-type(3)::before { content: "Email ID"; }
+  tbody td:nth-of-type(4)::before { content: "Contact Number"; }
+  tbody td:nth-of-type(5)::before { content: "Actions"; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  main {
+    padding: 1rem 1.5rem;
+  }
+}
